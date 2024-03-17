@@ -28,7 +28,7 @@ class FlexibleContent extends Component
                 'id' => $id,
                 'data' => $layout
             ];
-        }, get_field('content') ?? []);
+        }, get_field('content') ?: []);
     }
 
     /**

@@ -1,5 +1,9 @@
 <?php
 
+if (!function_exists('get_field') && !is_admin() && !is_login()) {
+    wp_die(__('Please active ACF Pro in order to make this theme works correctly', 'sage'));
+}
+
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
@@ -11,7 +15,7 @@
 |
 */
 
-if (! file_exists($composer = __DIR__.'/vendor/autoload.php')) {
+if (!file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
     wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'sage'));
 }
 
@@ -29,7 +33,7 @@ require $composer;
 |
 */
 
-if (! function_exists('\Roots\bootloader')) {
+if (!function_exists('\Roots\bootloader')) {
     wp_die(
         __('You need to install Acorn to use this theme.', 'sage'),
         '',
@@ -56,7 +60,7 @@ if (! function_exists('\Roots\bootloader')) {
 
 collect(['setup', 'filters'])
     ->each(function ($file) {
-        if (! locate_template($file = "app/{$file}.php", true, true)) {
+        if (!locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
                 /* translators: %s is replaced with the relative file path */
                 sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file)

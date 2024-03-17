@@ -1,6 +1,6 @@
 <header class="banner">
     <a class="brand" href="{{ home_url('/') }}">
-        {{ __('Home', 'tamago') }}
+        {{ __('Home', 'sage') }}
     </a>
 
     @if (has_nav_menu('primary_navigation'))

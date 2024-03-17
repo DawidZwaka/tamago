@@ -37,12 +37,12 @@ class PostCard extends Component
     protected function getDate()
     {
         $diff = date_diff(date_create(get_the_date('Y-m-d')), date_create(date('Y-m-d')));
-        $output = __('today', "tamago");
+        $output = __('today', "sage");
 
         if ($diff->days === 1) {
-            $output = __('yesterday', "tamago");
+            $output = __('yesterday', "sage");
         } else if ($diff->days > 1) {
-            $output = $diff->days . ' ' . __('days ago', "tamago");
+            $output = $diff->days . ' ' . __('days ago', "sage");
         }
 
         return $output;

@@ -30,7 +30,7 @@
             @endif
 
             <x-ui.button href="{{ $url }}" class="mt-auto">
-                {{ __('Read more', 'tamago') }}
+                {{ __('Read more', 'sage') }}
 
                 <x-icons.arrow class="rtl:rotate-180 ms-2" />
             </x-ui.button>
